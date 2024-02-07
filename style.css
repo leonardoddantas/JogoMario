@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Modifica a forma de exibir o tamanho de uma caixa, por exemplo quando eu criei uma div e disse que ela teria
+    uma tamanho de 50 por 50, mas na verdade quando passo o mause em cima do elemento aparecer uma tamanho por exemplo de 75 por 80. Isso 
+    acontecer pois o modo de exibir o tamanho por padrão é pegar o tamanho e somar com o paddin e a margin desse elemento. O border-box
+    faz aparecer apenas o tamanho que eu passei, 50 por 50.*/
+}
+.wrapper-game {
+    width: 100%;
+    height: 700px;
+    margin: 0 auto;
+    border-bottom: 20px solid rgb(9, 137, 0);
+    background: linear-gradient(#45c3f5, #a8dcf0);
+    position: relative; /* Tudo que tiver dentro dessa div será relativa a ela */
+    overflow: hidden; /* Tudo que saiu de dentro da div será cortado e ficara invisiviu */
+}
+#clouds {
+    width: 550px;
+    position: absolute;
+    animation: clouds 20s infinite linear;
+}
+#pipe {
+    width: 80px;
+    position: absolute;
+    bottom: 0;
+    animation: pipe-animação 2s infinite linear; /*estou chamando a animação, dizendo que ela terá 3s, será infinita ou seja, depois que 
+    ela acaba vai ser repetir novamente e será linear iniciara e terminara na mesma velocidade */
+}
+.mario {
+    position: absolute;
+    bottom: 0;
+    width: 180px;
+}
+.jump {
+    animation: jump 1s ease-out;
+}
+@keyframes pipe-animação { /* Faz uma animação */
+    from {right: -10%;} /* Começa no rigth em - 10% */
+    to {right: 100%;}/* E termina em rigth em 100% */
+}
+@keyframes jump {
+    0% {
+        bottom: 0; /* Qunado tiver em 0% da animação o bottom vai ter 0px*/
+    }
+    40% {
+        bottom: 200px; /* Qunado tiver em 40% da animação o bottom vai ter 180px*/
+    }
+    50% {
+        bottom: 200px; /* Qunado tiver em 50% da animação o bottom vai ter 180px*/
+    }
+    60% {
+        bottom: 200px; /* Qunado tiver em 60% da animação o bottom vai ter 180px*/
+    }
+    100% {
+        bottom: 0; /* Qunado tiver em 110% da animação o bottom vai ter 0px*/
+    }
+}
+@keyframes clouds {
+    from{right: -550px;}
+    to{right: 100%;}
+}
